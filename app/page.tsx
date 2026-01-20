@@ -2,29 +2,28 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50 font-sans text-right" dir="rtl">
       
-      {/* شريط الإلحاح النفسي (Urgency) */}
+      {/* شريط الإلحاح النفسي */}
       <div className="bg-black text-white text-center py-2 text-sm font-bold animate-pulse">
-        🚀 انطلاق مسبار ڤي | خصومات الافتتاح تصل إلى 80% لفترة محدودة!
-      </div>{/* قسم المنتجات */}
-<div className="p-10 flex flex-wrap gap-5 justify-center">
+        🚀 انطلاق مسبار في | خصومات الافتتاح تصل إلى 80% لفترة محدودة!
+      </div>
 
-  {/* بطاقة الكاميرا */}
-  <div className="border border-gray-300 rounded-lg p-5 w-80 shadow-lg bg-white">
-    {/* هنا تم وضع اسم صورتك الصحيح */}
-    <img src="/cam6.jpg" alt="كاميرا" className="w-full h-48 object-cover rounded mb-4" />
-    
-    <h2 className="text-xl font-bold text-black mb-2">كاميرا احترافية</h2>
-    <p className="text-gray-600 text-sm mb-4">كاميرا مميزة للتصوير الفوتوغرافي والفيديو.</p>
-    
-    <div className="flex justify-between items-center">
-      <span className="text-red-600 font-bold text-lg">2500 ريال</span>
-      <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-        شراء
-      </button>
-    </div>
-  </div>
+      {/* قسم المنتجات */}
+      <div className="p-10 flex flex-wrap gap-5 justify-center">
+        {/* بطاقة الكاميرا */}
+        <div className="border border-gray-300 rounded-lg p-5 w-80 shadow-lg bg-white">
+          <img src="/cam6.jpg" alt="كاميرا" className="w-full h-48 object-cover rounded mb-4" />
+          <h2 className="text-xl font-bold text-black mb-2">كاميرا احترافية</h2>
+          <p className="text-gray-600 text-sm mb-4">كاميرا مميزة للتصوير الفوتوغرافي والفيديو.</p>
+          <div className="flex justify-between items-center">
+            <span className="text-red-600 font-bold text-lg">2500 ريال</span>
+            <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">شراء</button>
+          </div>
+        </div>
+      </div> {/* هذا القوس هو اللي كان ناقص وموقف الشغل */}
 
-</div>
+      {/* الهيدر (Navigation) */}
+      <header className="bg-white shadow-md sticky top-0 z-50 border-b-2 border-yellow-500"></header>
+  
 
       {/* الهيدر (Navigation) */}
       <header className="bg-white shadow-md sticky top-0 z-50 border-b-2 border-yellow-500">
