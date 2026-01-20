@@ -4,11 +4,12 @@ export default function Home() {
       
       {/* شريط الإلحاح النفسي (Urgency) */}
       <div className="bg-black text-white text-center py-2 text-sm font-bold animate-pulse">
-        🚀 انطلاق مسبار ڤي | خصومات الافتتاح تصل إلى 40% لفترة محدودة!
+        🚀 انطلاق مسبار ڤي | خصومات الافتتاح تصل إلى 80% لفترة محدودة!
       </div>
 
       {/* الهيدر (Navigation) */}
       <header className="bg-white shadow-md sticky top-0 z-50 border-b-2 border-yellow-500">
+
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex gap-4 items-center">
             <button className="bg-gray-100 p-2 rounded-full">🛒</button>
@@ -138,4 +139,4 @@ export default function Home() {
       </footer>
     </div>
   );
-}
+
