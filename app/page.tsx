@@ -2,16 +2,16 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50 font-sans text-right text-gray-900" dir="rtl">
       
-      {/* 1. شريط الإلحاح العلوي (أزرق غامق للثقة + خط عريض) */}
+      {/* 1. شريط الإلحاح العلوي */}
       <div className="bg-[#1a237e] text-white text-center py-3 text-sm font-medium">
         🎉 شحن مجاني للطلبات فوق 200 ريال لفترة محدودة!
       </div>
 
-      {/* 2. الهيدر (رأس الصفحة) - أبيض نظيف */}
+      {/* 2. الهيدر (رأس الصفحة) - التعديل هنا تم */}
       <header className="bg-white border-b border-gray-200 sticky top-0 z-40 shadow-sm">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           
-          {/* أزرار اليسار */}
+          {/* أزرار اليسار (السلة) */}
           <div className="flex gap-4 items-center">
             <button className="relative p-2 hover:bg-gray-100 rounded-full transition-colors group">
               <span className="text-2xl">🛒</span>
@@ -22,11 +22,12 @@ export default function Home() {
             </button>
           </div>
 
-          {/* اسم المحل + اللوجو */}
+          {/* اسم المحل + اللوجو (تم تعديل الترتيب) */}
           <div className="flex items-center gap-3">
             <div className="text-right">
-              <h1 className="text-3xl font-black text-[#1a237e] tracking-tighter uppercase flex items-center justify-end">
-                MISBAR <span className="text-yellow-500 text-4xl ml-1">V</span>
+              {/* هنا حطينا dir="ltr" عشان الاسم ينكتب صح من اليسار لليمين */}
+              <h1 className="text-3xl font-black text-[#1a237e] tracking-tighter uppercase flex items-center gap-1" dir="ltr">
+                MISBAR <span className="text-yellow-500 text-4xl">V</span>
               </h1>
               <p className="text-xs font-bold text-gray-500 tracking-widest opacity-80">
                 وجهتك التقنية الأولى
@@ -43,7 +44,7 @@ export default function Home() {
         </div>
       </header>
 
-      {/* 3. قسم الواجهة (Hero) - نظيف وبسيط مثل أبل */}
+      {/* 3. قسم الواجهة (Hero) */}
       <main className="container mx-auto px-4 py-16 text-center">
         
         <div className="max-w-4xl mx-auto">
@@ -69,7 +70,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* 4. قسم المنتجات (تصميم الكروت الاحترافي) */}
+        {/* 4. قسم المنتجات */}
         <div className="mt-24 text-right">
           <div className="flex justify-between items-end mb-8 border-b border-gray-200 pb-4">
              <button className="text-blue-700 font-bold hover:underline">عرض الكل ←</button>
@@ -141,7 +142,7 @@ export default function Home() {
 
       </main>
 
-      {/* 4. التذييل (Footer) - بسيط */}
+      {/* 4. التذييل (Footer) */}
       <footer className="bg-white border-t border-gray-200 mt-20 py-12">
         <div className="container mx-auto px-4 text-center">
           <p className="text-gray-500 text-sm">
