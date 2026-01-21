@@ -1,17 +1,55 @@
+import React from 'react';
+
 export default function Home() {
+  
+  // ---------------------------------------------------------
+  // 1️⃣ منطقة البيانات: هنا عدّل المنتجات والأسعار والصور براحتك
+  // ---------------------------------------------------------
+  const products = [
+    {
+      id: 1,
+      name: "كاميرا مراقبة خارجية 4K",
+      price: 280,
+      oldPrice: 350,
+      image: "https://images.unsplash.com/photo-1557324232-b8917d3c3dcb?auto=format&fit=crop&w=500&q=80", // صورة كاميرا خارجية
+      badge: "خصم 20%",
+      badgeColor: "bg-red-500",
+      rating: 5
+    },
+    {
+      id: 2,
+      name: "كاميرا منزلية ذكية 360",
+      price: 149,
+      oldPrice: null, // ما عليها خصم
+      image: "https://images.unsplash.com/photo-1558002038-1091a57509ff?auto=format&fit=crop&w=500&q=80", // صورة كاميرا داخلية
+      badge: "جديد",
+      badgeColor: "bg-green-500",
+      rating: 4
+    },
+    {
+      id: 3,
+      name: "طقم حماية متكامل (4 قطع)",
+      price: 999,
+      oldPrice: 1400,
+      image: "https://images.unsplash.com/photo-1588614959060-4d144f28b207?auto=format&fit=crop&w=500&q=80", // صورة معدات
+      badge: "الأكثر طلباً",
+      badgeColor: "bg-yellow-500 text-black", // لون مميز
+      rating: 5
+    }
+  ];
+  // ---------------------------------------------------------
+
   return (
     <div className="min-h-screen bg-gray-50 font-sans text-right text-gray-900" dir="rtl">
       
-      {/* 1. شريط الإلحاح العلوي */}
+      {/* شريط علوي */}
       <div className="bg-[#1a237e] text-white text-center py-3 text-sm font-medium">
         🎉 شحن مجاني للطلبات فوق 200 ريال لفترة محدودة!
       </div>
 
-      {/* 2. الهيدر (رأس الصفحة) - التعديل هنا تم */}
+      {/* الهيدر */}
       <header className="bg-white border-b border-gray-200 sticky top-0 z-40 shadow-sm">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          
-          {/* أزرار اليسار (السلة) */}
           <div className="flex gap-4 items-center">
             <button className="relative p-2 hover:bg-gray-100 rounded-full transition-colors group">
               <span className="text-2xl">🛒</span>
@@ -21,11 +59,8 @@ export default function Home() {
               تسجيل الدخول
             </button>
           </div>
-
-          {/* اسم المحل + اللوجو (تم تعديل الترتيب) */}
           <div className="flex items-center gap-3">
             <div className="text-right">
-              {/* هنا حطينا dir="ltr" عشان الاسم ينكتب صح من اليسار لليمين */}
               <h1 className="text-3xl font-black text-[#1a237e] tracking-tighter uppercase flex items-center gap-1" dir="ltr">
                 MISBAR <span className="text-yellow-500 text-4xl">V</span>
               </h1>
@@ -33,20 +68,12 @@ export default function Home() {
                 وجهتك التقنية الأولى
               </p>
             </div>
-             {/* أيقونة المتجر */}
-            <img 
-              src="https://cdn-icons-png.flaticon.com/512/3687/3687412.png" 
-              alt="Logo" 
-              className="w-10 h-10 object-contain"
-            />
           </div>
-
         </div>
       </header>
 
-      {/* 3. قسم الواجهة (Hero) */}
+      {/* الواجهة الرئيسية */}
       <main className="container mx-auto px-4 py-16 text-center">
-        
         <div className="max-w-4xl mx-auto">
           <span className="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full mb-4 inline-block">
             جديد 2026
@@ -55,22 +82,17 @@ export default function Home() {
             راقب عالمك.. <br />
             <span className="text-blue-700">بوضوح لا يصدق.</span>
           </h2>
-
           <p className="text-gray-600 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
             في <span className="font-bold text-black">مسبار ڤي</span>، نجمع لك أحدث تقنيات الأمن والمراقبة الذكية بأسعار تنافس المتاجر العالمية.
           </p>
-
           <div className="flex justify-center gap-4">
             <button className="bg-blue-700 hover:bg-blue-800 text-white text-lg font-bold py-4 px-10 rounded-xl shadow-lg shadow-blue-700/30 transition-all transform hover:-translate-y-1">
               تصفح المنتجات
             </button>
-            <button className="bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 text-lg font-bold py-4 px-10 rounded-xl transition-all">
-              العروض الخاصة
-            </button>
           </div>
         </div>
 
-        {/* 4. قسم المنتجات */}
+        {/* 2️⃣ منطقة عرض المنتجات (ديناميكية) */}
         <div className="mt-24 text-right">
           <div className="flex justify-between items-end mb-8 border-b border-gray-200 pb-4">
              <button className="text-blue-700 font-bold hover:underline">عرض الكل ←</button>
@@ -78,77 +100,51 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            
-            {/* منتج 1 */}
-            <div className="bg-white rounded-2xl p-4 shadow-[0_2px_15px_rgba(0,0,0,0.05)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.1)] transition-all border border-gray-100 group">
-              <div className="relative bg-gray-50 rounded-xl h-64 flex items-center justify-center mb-4 overflow-hidden">
-                <span className="absolute top-3 right-3 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">خصم 20%</span>
-                <img src="https://cdn-icons-png.flaticon.com/512/3687/3687412.png" className="w-32 h-32 group-hover:scale-110 transition-transform duration-500" alt="منتج" />
-              </div>
-              <h4 className="text-lg font-bold text-gray-900 mb-1">كاميرا مراقبة خارجية Pro</h4>
-              <div className="flex items-center gap-1 mb-3">
-                 <span className="text-yellow-400">★★★★★</span>
-                 <span className="text-xs text-gray-400">(45 تقييم)</span>
-              </div>
-              <div className="flex justify-between items-center">
-                <button className="bg-blue-50 hover:bg-blue-100 text-blue-700 w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl transition-colors">+</button>
-                <div className="text-left">
-                  <span className="block text-xs text-gray-400 line-through">350 ر.س</span>
-                  <span className="block text-xl font-black text-gray-900">280 ر.س</span>
+            {/* هنا الكود يلف على قائمة البيانات ويرسمها وحدة وحدة */}
+            {products.map((product) => (
+              <div key={product.id} className="bg-white rounded-2xl p-4 shadow-sm hover:shadow-xl transition-all border border-gray-100 group">
+                
+                {/* الصورة */}
+                <div className="relative bg-gray-50 rounded-xl h-64 flex items-center justify-center mb-4 overflow-hidden">
+                  {product.badge && (
+                    <span className={`absolute top-3 right-3 ${product.badgeColor} text-white text-xs font-bold px-2 py-1 rounded z-10`}>
+                      {product.badge}
+                    </span>
+                  )}
+                  <img 
+                    src={product.image} 
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+                    alt={product.name} 
+                  />
+                </div>
+
+                {/* التفاصيل */}
+                <h4 className="text-lg font-bold text-gray-900 mb-1">{product.name}</h4>
+                <div className="flex items-center gap-1 mb-3">
+                   <span className="text-yellow-400">{'★'.repeat(product.rating)}</span>
+                   <span className="text-gray-300">{'★'.repeat(5 - product.rating)}</span>
+                </div>
+                
+                {/* السعر والزر */}
+                <div className="flex justify-between items-center">
+                  <button className="bg-blue-50 hover:bg-blue-600 hover:text-white text-blue-700 w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl transition-all">
+                    +
+                  </button>
+                  <div className="text-left">
+                    {product.oldPrice && (
+                      <span className="block text-xs text-gray-400 line-through">{product.oldPrice} ر.س</span>
+                    )}
+                    <span className="block text-xl font-black text-gray-900">{product.price} ر.س</span>
+                  </div>
                 </div>
               </div>
-            </div>
-
-            {/* منتج 2 */}
-            <div className="bg-white rounded-2xl p-4 shadow-[0_2px_15px_rgba(0,0,0,0.05)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.1)] transition-all border border-gray-100 group">
-              <div className="relative bg-gray-50 rounded-xl h-64 flex items-center justify-center mb-4 overflow-hidden">
-                <span className="absolute top-3 right-3 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded">جديد</span>
-                <img src="https://cdn-icons-png.flaticon.com/512/4525/4525048.png" className="w-32 h-32 group-hover:scale-110 transition-transform duration-500" alt="منتج" />
-              </div>
-              <h4 className="text-lg font-bold text-gray-900 mb-1">عدسة زووم ذكية 360</h4>
-              <div className="flex items-center gap-1 mb-3">
-                 <span className="text-yellow-400">★★★★☆</span>
-                 <span className="text-xs text-gray-400">(12 تقييم)</span>
-              </div>
-              <div className="flex justify-between items-center">
-                <button className="bg-blue-50 hover:bg-blue-100 text-blue-700 w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl transition-colors">+</button>
-                <div className="text-left">
-                  <span className="block text-xl font-black text-gray-900">149 ر.س</span>
-                </div>
-              </div>
-            </div>
-
-            {/* منتج 3 */}
-            <div className="bg-white rounded-2xl p-4 shadow-[0_2px_15px_rgba(0,0,0,0.05)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.1)] transition-all border border-gray-100 group">
-              <div className="relative bg-gray-50 rounded-xl h-64 flex items-center justify-center mb-4 overflow-hidden">
-                <img src="https://cdn-icons-png.flaticon.com/512/3687/3687412.png" className="w-32 h-32 group-hover:scale-110 transition-transform duration-500" alt="منتج" />
-              </div>
-              <h4 className="text-lg font-bold text-gray-900 mb-1">طقم أمان للمنزل (4 قطع)</h4>
-              <div className="flex items-center gap-1 mb-3">
-                 <span className="text-yellow-400">★★★★★</span>
-                 <span className="text-xs text-gray-400">(89 تقييم)</span>
-              </div>
-              <div className="flex justify-between items-center">
-                <button className="bg-blue-50 hover:bg-blue-100 text-blue-700 w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl transition-colors">+</button>
-                <div className="text-left">
-                  <span className="block text-xs text-gray-400 line-through">1400 ر.س</span>
-                  <span className="block text-xl font-black text-gray-900">999 ر.س</span>
-                </div>
-              </div>
-            </div>
-
+            ))}
           </div>
         </div>
-
       </main>
 
-      {/* 4. التذييل (Footer) */}
-      <footer className="bg-white border-t border-gray-200 mt-20 py-12">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-gray-500 text-sm">
-            © 2026 مسبار ڤي. جميع الحقوق محفوظة.
-          </p>
-        </div>
+      <footer className="bg-white border-t border-gray-200 mt-20 py-12 text-center">
+        <p className="text-gray-500 text-sm">© 2026 مسبار ڤي. جميع الحقوق محفوظة.</p>
       </footer>
     </div>
   );
