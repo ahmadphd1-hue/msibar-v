@@ -6,12 +6,17 @@ export default function Home() {
   // 1️⃣ منطقة البيانات: هنا عدّل المنتجات والأسعار والصور براحتك
   // ---------------------------------------------------------
   const products = [
+    // ---------------------------------------------------------
+  // 1️⃣ منطقة البيانات المحدثة: صور كاميرات حقيقية 📸
+  // ---------------------------------------------------------
+  const products = [
     {
       id: 1,
       name: "كاميرا مراقبة خارجية 4K",
       price: 280,
       oldPrice: 350,
-      image: "https://images.unsplash.com/photo-1557324232-b8917d3c3dcb?auto=format&fit=crop&w=500&q=80", // صورة كاميرا خارجية
+      // رابط صورة كاميرا خارجية حقيقية
+      image: "https://m.media-amazon.com/images/I/51y-0Gq00EL._AC_SL1000_.jpg", 
       badge: "خصم 20%",
       badgeColor: "bg-red-500",
       rating: 5
@@ -20,8 +25,9 @@ export default function Home() {
       id: 2,
       name: "كاميرا منزلية ذكية 360",
       price: 149,
-      oldPrice: null, // ما عليها خصم
-      image: "https://images.unsplash.com/photo-1558002038-1091a57509ff?auto=format&fit=crop&w=500&q=80", // صورة كاميرا داخلية
+      oldPrice: null,
+      // رابط صورة كاميرا داخلية دوارة
+      image: "https://m.media-amazon.com/images/I/61Lo8f9YJEL._AC_SL1500_.jpg",
       badge: "جديد",
       badgeColor: "bg-green-500",
       rating: 4
@@ -31,9 +37,10 @@ export default function Home() {
       name: "طقم حماية متكامل (4 قطع)",
       price: 999,
       oldPrice: 1400,
-      image: "https://images.unsplash.com/photo-1588614959060-4d144f28b207?auto=format&fit=crop&w=500&q=80", // صورة معدات
+      // رابط صورة طقم كاميرات مع جهاز تسجيل
+      image: "https://m.media-amazon.com/images/I/71tDggH61YL._AC_SL1500_.jpg", 
       badge: "الأكثر طلباً",
-      badgeColor: "bg-yellow-500 text-black", // لون مميز
+      badgeColor: "bg-yellow-500 text-black",
       rating: 5
     }
   ];
